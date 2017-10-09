@@ -36,18 +36,18 @@ import java.util.EnumSet;
  * other data.
  */
 public class AdmobRecyclerAdapterWrapper
-        extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+        extends RecyclerView.Adapter<LatestAdapter.ViewHolder>
         implements AdmobFetcherBase.AdmobListener {
 
     private final String TAG = AdmobRecyclerAdapterWrapper.class.getCanonicalName();
 
-    private RecyclerView.Adapter<RecyclerView.ViewHolder> mAdapter;
+    private RecyclerView.Adapter<LatestAdapter.ViewHolder> mAdapter;
 
-    public RecyclerView.Adapter<RecyclerView.ViewHolder> getAdapter() {
+    public RecyclerView.Adapter<LatestAdapter.ViewHolder> getAdapter() {
         return mAdapter;
     }
 
-    public void setAdapter(RecyclerView.Adapter<RecyclerView.ViewHolder> adapter) {
+    public void setAdapter(RecyclerView.Adapter<LatestAdapter.ViewHolder> adapter) {
         mAdapter = adapter;
         mAdapter.registerAdapterDataObserver(new AdapterWrapperObserver(this, getAdapterCalculator(), adFetcher));
         notifyDataSetChanged();
